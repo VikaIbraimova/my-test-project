@@ -1,0 +1,14 @@
+Исправления:
+
+08.02.2016 
+1)Исправила реализацию метода addMoney
+Вместо :public Money addMoney(Money m){
+        return new Money(value + m.getValue(), type);
+    }
+
+Сделала: 
+public Money addMoney(Money m){
+        return new Money(value + m.getValue(), m.getType());
+    }
+2)Так как объект класса Money составной(int,String), то для корректоного отрабатывания теста с использованием метода assertTrue, пришлось перепоределить в самом классе Money метод equals, который сравнивает поля объктов, чтобы пределить равны ли эти объекты
+Источник решения: http://devcolibri.com/864
